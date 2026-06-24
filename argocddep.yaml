@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-dep
+  namespace: ajeeshregi
+  annotations:
+    kubernetes.io/change-cause: "image tag updating to nginx:perl"
+spec:
+  strategy:
+    type: Recreate
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: c1
+        image: nginx:perl
