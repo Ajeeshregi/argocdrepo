@@ -4,7 +4,7 @@ metadata:
   name: argocd-ajeesh
   namespace: ajeeshregi
   annotations:
-    kubernetes.io/change-cause: "image tag updating to nginx:perl"
+    kubernetes.io/change-cause: "image tag updating tasking"
 spec:
   strategy:
     type: Recreate
@@ -19,4 +19,4 @@ spec:
     spec:
       containers:
       - name: c1
-        image: nginxdemos/hello
+        image: ajeeshregi/allianz-repo:Regi
